@@ -1,0 +1,31 @@
+.contenedor {
+    background-color: #171a21;
+}
+
+.acomodar {
+    width: 100%;
+    height: 104px;
+    margin: 0 auto;
+    max-width: 1200px;
+    display:flex;
+    align-items: center;
+    justify-content:space-around;
+}
+
+.texto {
+    color: #dcdedf;
+    font-size: 16px;
+}
+
+.texto:hover {
+    color: #ffffff;
+}
+
+.logo {
+    width: 176px;
+    height: 44px;
+}
+
+.link {
+    text-decoration: none;
+}

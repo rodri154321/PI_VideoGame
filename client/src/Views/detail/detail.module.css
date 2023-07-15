@@ -1,0 +1,47 @@
+.card {
+  padding: 20px;
+  width: auto;
+  min-height: 370px;
+  background: #212121;
+}
+
+
+.cardtitle {
+  font-size: 60px;
+  font-weight: 600;
+  color: #acd550;
+  margin: 15px 0 30px 10px;
+}
+.cardsubtitle {
+  font-size: 30px;
+  font-weight: 600;
+  color: #acd550;
+  margin: 15px 0 30px 10px;
+}
+
+.cardimage {
+  height: 500px;
+  min-height: 170px;
+  background-color: #313131;
+  border-radius: 15px;
+  background: #313131;
+  box-shadow: inset 5px 5px 3px #2f2f2f,
+            inset -5px -5px 3px #333333;
+}
+
+.cardbody {
+  margin: 13px 0 0 10px;
+  color: rgb(184, 184, 184);
+  font-size: 15px;
+}
+
+.footer {
+  float: left;
+  margin: 28px 0 0 18px;
+  font-size: 13px;
+  color: #b3b3b3;
+}
+
+.by-name {
+  font-weight: 700;
+}
