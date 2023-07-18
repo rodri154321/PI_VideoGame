@@ -5,6 +5,11 @@
   background: #212121;
 }
 
+.id {
+  padding: 20px;
+  width: auto;
+  min-height: 10px;
+}
 
 .cardtitle {
   font-size: 60px;

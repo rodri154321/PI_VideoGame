@@ -5,8 +5,20 @@ import Landing from "./Views/landing/Landing";
 import NavBar from "./Components/navbar/NavBar";
 import Form from "./Views/form/Form";
 import Detail from './Views/detail/Detail';
+import { useEffect} from 'react'
+import { useDispatch } from "react-redux"
+import { getGames, getGenres,getplatform} from "./redux/action"
 
 function App() {
+
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    dispatch(getGames())
+    dispatch(getGenres())
+    dispatch(getplatform())
+  }, [])
+  
   const {pathname} = useLocation();
 
 

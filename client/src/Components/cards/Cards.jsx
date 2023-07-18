@@ -13,6 +13,7 @@ const Cards = (props) => {
                   image={juego.background_image}
                   id={juego.id}
                   key={juego.id}
+                  Genres={juego.Genres}
                />
             )
          }) }

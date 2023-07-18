@@ -2,7 +2,11 @@ import React from 'react'
 import { NavLink } from 'react-router-dom';
 import style from "./Landing.module.css"
 
+
 const Landing = () => {
+
+  
+
   return (
     <div className={style.contenedor}>
       <div className={style.card}>

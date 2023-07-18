@@ -1,0 +1,68 @@
+.contentCard{
+    height: auto;
+}
+
+.butt {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #3d405b;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 17px;
+    padding: 16px;
+    width: 130px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+   }
+   
+   .spannext {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .spannext:after {
+    content: '»';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -15px;
+    transition: 0.5s;
+   }
+
+   .spanprev {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+   }
+   
+   .spanprev:after {
+    content: '«';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: -15px;
+    transition: 0.5s;
+   }
+   
+   .butt:hover .spannext {
+    padding-right: 15px;
+   }
+
+   .butt:hover .spanprev {
+    padding-left: 15px;
+   }
+   
+   .butt:hover .spannext:after {
+    opacity: 1;
+    right: 0;
+   }
+
+   .butt:hover .spanprev:after {
+    opacity: 1;
+    left: 0;
+   }

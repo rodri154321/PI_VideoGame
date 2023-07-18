@@ -1,15 +1,17 @@
 import React from 'react'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { getGenres,postUser } from '../../redux/action'
+import { postUser } from '../../redux/action'
 import style from "../form/form.module.css"
 
 const Form = () => {
 
+    const dispatch = useDispatch()
+
     const [state, setState] = useState({
         name: "",
         description: "",
-        platforms: "",
+        platforms: [],
         background_image: "",
         released: "",
         rating: "",
@@ -17,7 +19,7 @@ const Form = () => {
     })
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        
         dispatch(postUser(state))
     }
     const handleChange = (e) => {
@@ -26,6 +28,11 @@ const Form = () => {
             setState({
                 ...state,
                 ...state.genres.push(e.target.value)
+              })
+        }else if(e.target.name === "platforms"){
+            setState({
+                ...state, 
+                ...state.platforms.push(e.target.value)
               })
         }else{
             setState({
@@ -42,13 +49,17 @@ const Form = () => {
               })
         }
 
+        const borrarPlatforms = () => {
+            setState({
+                ...state,
+                ...state.platforms.pop()
+              })
+        }
+
     const genres = useSelector((state) => state.genres)
+    const platforms = useSelector((state) => state.platforms)
 
-    const dispatch = useDispatch(
-
-        useEffect(() => {
-            dispatch(getGenres())
-        }, []))
+    
 
     //name, description, platforms, background_image, released, rating, genres
 
@@ -71,11 +82,6 @@ const Form = () => {
                         <label className={style.iLabel} for="description">Descripcion</label>
                     </div>
                     <div className={style.ic2}>
-                        <input placeholder="Plataformas" type="text" className={style.input} id="platforms" name="platforms" onChange={handleChange}/>
-                        <div className={style.cut}></div>
-                        <label className={style.iLabel} for="platforms">Plataformas</label>
-                    </div>
-                    <div className={style.ic2}>
                         <input placeholder="Imagen URL" type="text" className={style.input} id="background_image" name="background_image" onChange={handleChange}/>
                         <div className={style.cut}></div>
                         <label className={style.iLabel} for="background_image">Imagen</label>
@@ -90,6 +96,17 @@ const Form = () => {
                         <div className={style.cut}></div>
                         <label className={style.iLabel} for="rating">Rating</label>
                     </div>
+                    <div className={style.ic1}>
+
+                    <select name="platforms" multiple className={style.input} id="platforms" onChange={handleChange}>
+                    {platforms.map((pla) => <option value={pla} >{pla}</option>)}
+                        </select>
+                        <div className={style.cut}></div>
+                        {state.platforms.map((pla) => <p className={style.subtitle}> -{pla}- </p>)}
+                        <label className={style.iLabel} for="plaplatforms">Platforms</label>
+                        <div onClick={borrarPlatforms} className={style.borrarGen}>Borrar Platforms</div>
+                    </div>
+
                     <div className={style.ic1}>
                         <select name="genres" multiple className={style.input} id="genres" onChange={handleChange}>
                             {genres.map((gen) => <option value={gen} >{gen}</option>)}
