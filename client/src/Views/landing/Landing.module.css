@@ -1,8 +1,12 @@
+
 .contenedor{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10%;
+  background-image: url('https://acf.geeknetic.es/imgri/imagenes/auto/2022/2/3/dlm-como-devolver-juegos-de-steam.jpg?f=webp');
+  background-size:cover;
+  width:100vw;
+  height:100vh; 
 }
 
 .card {
@@ -17,7 +21,6 @@
   flex-direction: column;
   border: solid 1px ;
   border-color: #acd550;
-  
 }
 
 .pan {

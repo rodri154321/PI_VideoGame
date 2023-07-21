@@ -21,6 +21,7 @@ const Home = () => {
     setItems([...games].splice(0, item_per_page))
   }, [games])
 
+
   const nextPage = () => {
     const next_page = currentPage + 1;
     const firstIndex = next_page * item_per_page;
@@ -52,34 +53,33 @@ const Home = () => {
 
   return (
     <div>
-      <div>
+      <div className={style.contentCard}>
+        <div>
 
           <select onChange={handelFilterGen}>
             <option value="All">All</option>
             {genres.map((gen) => <option value={gen} >{gen}</option>)}
           </select>
-        
+
           <select onChange={handelFilterWhere}>
             <option value="Todos">Todos</option>
             <option value="DB">Data Base</option>
             <option value="API">Api</option>
           </select>
-        
-        
-        <select onChange={handelOrder}>
+
+
+          <select onChange={handelOrder}>
             <option value="def">Default</option>
             <option value="A">rating ↑ </option>
             <option value="D">rating ↓</option>
             <option value="alfA">A-Z</option>
             <option value="alfD">Z-A</option>
           </select>
-        
-      </div>
-      <div className={style.contentCard}>
+        </div>
+        <div>
+          <button className={style.butt} onClick={prevPage}><span className={style.spanprev}>Prev</span></button> <button className={style.butt} onClick={nextPage}><span className={style.spannext}>Next</span></button>
+        </div>
         <Cards games={items} />
-      </div>
-      <div>
-        <button className={style.butt} onClick={prevPage}><span className={style.spanprev}>Prev</span></button> <button className={style.butt} onClick={nextPage}><span className={style.spannext}>Next</span></button>
       </div>
     </div>
   )
